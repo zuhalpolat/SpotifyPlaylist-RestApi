@@ -17,7 +17,7 @@ import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 import java.time.Duration;
 
 @Configuration
-public class PlaylistCouchbaseConfiguration {
+public class PlaylistCouchbaseConfiguration{
 
     private final CouchbaseProperties couchbaseProperties;
 
