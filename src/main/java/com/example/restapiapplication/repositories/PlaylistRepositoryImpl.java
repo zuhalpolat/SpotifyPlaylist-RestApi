@@ -60,14 +60,14 @@ public class PlaylistRepositoryImpl implements PlaylistRepository{
     @Override
     public void addTrack(String id, List<Track> tracks) {
         Optional<Playlist> playlist = findById(id);
-        playlist.get().getTracks().addAll(tracks);
+        playlist.get().getTrackList().addAll(tracks);
         playlistCollection.replace(playlist.get().getId(), playlist);
     }
 
     @Override
     public void deleteTrack(String id, Track track) {
         Optional<Playlist> playlist = findById(id);
-        playlist.get().getTracks().remove(track);
+        playlist.get().getTrackList().remove(track);
         playlistCollection.replace(playlist.get().getId(), playlist);
     }
 }
