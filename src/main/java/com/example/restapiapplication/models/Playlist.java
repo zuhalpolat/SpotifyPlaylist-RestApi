@@ -15,28 +15,18 @@ public class Playlist {
     private int totalFollowers;
     private List<Track> trackList;
     private int totalTrackNumber;
-    private String owner;
+    private String userId;
     private Boolean isPublic;
 
     public Playlist(){
         this.id = UUID.randomUUID().toString();
-        this.name = "Playlist";
-        this.description = "New Playlist";
-        this.totalFollowers = 0;
-        this.trackList = new ArrayList<>();
-        this.totalTrackNumber = trackList.size();
-        this.isPublic = true;
-    }
-
-    public Playlist(String name, String description, String owner, Boolean isPublic) {
-        this.id = UUID.randomUUID().toString();
-        this.name = name;
-        this.description = description;
+        this.name = "My Playlist";
+        this.description = "Playlist";
         this.totalFollowers = 0;
         this.trackList = new ArrayList<>();
         this.totalTrackNumber = 0;
-        this.owner = owner;
-        this.isPublic = isPublic;
+        this.userId = null;
+        this.isPublic = true;
     }
 
     public String getId() {
@@ -84,15 +74,15 @@ public class Playlist {
     }
 
     public void setTotalTrackNumber(int totalTrackNumber) {
-        this.totalTrackNumber = trackList.size();
+        this.totalTrackNumber = totalTrackNumber;
     }
 
-    public String getOwner() {
-        return owner;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setOwner(String owner) {
-        this.owner = owner;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public Boolean getPublic() {

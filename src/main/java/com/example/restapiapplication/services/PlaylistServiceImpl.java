@@ -4,10 +4,12 @@ import com.example.restapiapplication.models.Playlist;
 import com.example.restapiapplication.models.Track;
 import com.example.restapiapplication.repositories.PlaylistRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class PlaylistServiceImpl implements PlaylistService {
 
     @Autowired
@@ -19,13 +21,13 @@ public class PlaylistServiceImpl implements PlaylistService {
     }
 
     @Override
-    public Optional<Playlist> findById(String playlistId) {
+    public Playlist findById(String playlistId) {
         return playlistRepository.findById(playlistId);
     }
 
     @Override
-    public Optional<Playlist> findAllByUserId(String userId) {
-        return playlistRepository.findAllByUserId(userId);
+    public List<Playlist> findByUserId(String userId) {
+        return playlistRepository.findByUserId(userId);
     }
 
     @Override
@@ -34,8 +36,8 @@ public class PlaylistServiceImpl implements PlaylistService {
     }
 
     @Override
-    public void update(Playlist playlist) {
-        playlistRepository.update(playlist);
+    public void update(String id, Playlist playlist) {
+        playlistRepository.update(id, playlist);
     }
 
     @Override

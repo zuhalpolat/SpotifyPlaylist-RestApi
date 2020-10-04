@@ -12,13 +12,13 @@ public interface PlaylistRepository {
 
     List<Playlist> getAll();
 
-    Optional<Playlist> findById(String playlistId);
+    Playlist findById(String playlistId);
 
-    Optional<Playlist> findAllByUserId(String userId);
+    List<Playlist> findByUserId(String userId);
 
     void create(Playlist playlist);
 
-    void update(Playlist playlist);
+    void update(String id, Playlist playlist);
 
     void delete(String id);
 
