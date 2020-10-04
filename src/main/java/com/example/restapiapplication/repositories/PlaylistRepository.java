@@ -1,5 +1,6 @@
 package com.example.restapiapplication.repositories;
 
+import com.example.restapiapplication.exceptions.NotCreatedException;
 import com.example.restapiapplication.models.Playlist;
 import com.example.restapiapplication.models.Track;
 import org.springframework.stereotype.Repository;
@@ -10,13 +11,13 @@ import java.util.Optional;
 @Repository
 public interface PlaylistRepository {
 
-    List<Playlist> getAll();
+    List<Playlist> getAll() throws NotCreatedException;
 
     Playlist findById(String playlistId);
 
     List<Playlist> findByUserId(String userId);
 
-    void create(Playlist playlist);
+    void create(Playlist playlist) throws NotCreatedException;
 
     void update(String id, Playlist playlist);
 
